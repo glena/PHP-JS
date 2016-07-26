@@ -26,6 +26,7 @@ class ElseStatementTranspiler {
 
     $buffer->newLine();
     $buffer->append("}");
+    $buffer->newLine();
   }
 
 }

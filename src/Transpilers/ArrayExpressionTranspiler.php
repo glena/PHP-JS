@@ -40,7 +40,7 @@ class ArrayExpressionTranspiler {
 
     $buffer->append("]");
 
-    echo $buffer->get();
+    $buffer->newLine();
   }
 
   protected function is_obj(Array_ $statement, Buffer $buffer, Scope $scope) {
@@ -62,7 +62,7 @@ class ArrayExpressionTranspiler {
 
     $buffer->append("}");
 
-    echo $buffer->get();
+    $buffer->newLine();
   }
 
 }

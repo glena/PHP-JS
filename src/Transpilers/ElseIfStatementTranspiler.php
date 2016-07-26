@@ -11,7 +11,7 @@ class ElseIfStatementTranspiler {
 
   public function process(ElseIf_ $statement, Buffer $buffer, Scope $scope) {
 
-    $buffer->append("elseif (");
+    $buffer->append("else if (");
 
     $transpiler = TranspilerFactory::build(get_class($statement->cond));
     $transpiler->process($statement->cond, $buffer, $scope);
@@ -32,6 +32,7 @@ class ElseIfStatementTranspiler {
 
     $buffer->newLine();
     $buffer->append("}");
+    $buffer->newLine();
   }
 
 }
