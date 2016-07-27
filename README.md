@@ -3,6 +3,19 @@ A PHP to JS transpiler
 
 Takes a [PHP file](blob/master/example.php) and converts it to [Javascript](blob/master/example.js).
 
+## Disclaimer - This is a WIP
+
+TODO:
+
+- Handle clases, traits, interfaces
+- Handle namespaces
+- Handle requires
+- Handle imports when using autoload
+- Handle closures
+- Convert native functions (like strtolower to variable.toLowerCase)
+- Provide a summary of undefined functions that needs to be defined
+- A lot of things that I am not aware of
+
 ## Usage
 
 ```php
