@@ -7,7 +7,7 @@ Takes a [PHP file](blob/master/example.php) and converts it to [Javascript](blob
 
 TODO:
 
-- Handle clases, traits, interfaces
+- Handle traits, interfaces
 - Handle namespaces
 - Handle requires
 - Handle imports when using autoload
