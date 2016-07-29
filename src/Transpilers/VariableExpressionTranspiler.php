@@ -9,7 +9,7 @@ use Glena\PhpJs\Scope;
 class VariableExpressionTranspiler { 
 
   public function process(Variable $statement, Buffer $buffer, Scope $scope, bool $canDefine = false) {
-    if (! $scope->exists($statement->name)) {
+    if (!$this->shouldIgnore($statement->name) && ! $scope->exists($statement->name)) {
       if ($canDefine) {
         $scope->add($statement->name);
         $buffer->append('var ');
@@ -18,6 +18,10 @@ class VariableExpressionTranspiler {
       }
     }
     $buffer->append($statement->name);
+  }
+
+  protected function shouldIgnore($name) {
+    return in_array($name, ['this']);
   }
 
 }

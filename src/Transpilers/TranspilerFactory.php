@@ -10,6 +10,9 @@ class TranspilerFactory {
       case \PhpParser\Node\Stmt\Function_::class:
         return new FunctionStatementTranspiler();
         break;
+      case \PhpParser\Node\Stmt\ClassMethod::class:
+        return new ClassMethodStatementTranspiler();
+        break;
       case \PhpParser\Node\Expr\Assign::class:
         return new AssignExpressionTranspiler();
         break;
@@ -21,6 +24,9 @@ class TranspilerFactory {
         break;
       case \PhpParser\Node\Expr\BinaryOp\Plus::class:
         return new PlusOperatorTranspiler();
+        break;
+      case \PhpParser\Node\Expr\BinaryOp\Mul::class:
+        return new MulOperatorTranspiler();
         break;
       case \PhpParser\Node\Expr\Variable::class:
         return new VariableExpressionTranspiler();
@@ -90,6 +96,21 @@ class TranspilerFactory {
         break;
       case \PhpParser\Node\Stmt\Foreach_::class:
         return new ForEachExpressionTranspiler();
+        break;
+      case \PhpParser\Node\Stmt\Class_::class:
+        return new ClassStatementTranspiler();
+        break;
+      case \PhpParser\Node\Stmt\PropertyProperty::class:
+        return new PropertyStatementTranspiler();
+        break;
+      case \PhpParser\Node\Expr\PropertyFetch::class:
+        return new PropertyFetchExpressionTranspiler();
+        break;
+      case \PhpParser\Node\Expr\MethodCall::class:
+        return new MethodCallExpressionTranspiler();
+        break;
+      case \PhpParser\Node\Expr\New_::class:
+        return new NewExpressionTranspiler();
         break;
       
       default:
